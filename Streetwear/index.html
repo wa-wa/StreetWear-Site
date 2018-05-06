@@ -1,0 +1,72 @@
+<!--  Developed using css grid, work in progress -->
+<!--  Things to add: Responsiveness across all devicecs and browsers-->
+<!--  Add functionality and smooth animations -->
+<!--  Date: 03/16/2018 -->
+<!--  By Joshua Flores -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> CSS grid practice</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="nav">
+        <ul>
+          <a style="float:left;"  href="#" ><i class="fas fa-bars"></i></a>
+          <a class="shoppingBag" style="float:right;" href="#"><i  class="fas fa-shopping-bag"></i></a>
+          <a style="float:right;" href="#"><i  class="fas fa-search"></i></a>
+        </ul>
+      </div>
+      <div class="selector">
+        <a class="previous" href="#previous"><p><i class="fas fa-long-arrow-alt-left"></i> Previous<span><a href="#next" class="next"> Next <i class="fas fa-long-arrow-alt-right"></i></a></span></p></a>
+      </div>
+      <div class="bottomtitle">
+        <h5> StreetWear</h5>
+        <p> Featuring top streetwear outfits of 2018. </p>
+      </div>
+      <div class="addBag">
+        <button class="buttonBag" type="submit" name="button"><i class="fas fa-plus"></i> </span> Add to bag   </button>
+      </div>
+      <div class="sizes">
+        <button>36</button>
+        <button>38</button>
+        <button>40</button>
+        <button>42</button>
+      </div>
+      <div class="cost">
+        <p>$349</p>
+      </div>
+      <div class="img-wrap">
+        <img src="https://source.unsplash.com/random/900x700" alt="Image">
+      </div>
+    </div>
+
+  <script>
+    const previous = document.querySelector('.selector ');
+    const next = document.querySelector('.next');
+    const images = document.querySelector('.img-wrap');
+    let x = 0;
+
+    function nextFunc(e) {
+      console.log(x);
+      x++;
+
+
+      if (x > 3) {
+        x = 0;
+      }
+    }
+
+
+    previous.addEventListener('click', nextFunc);
+    // next.addEventListener('onclick')
+
+  </script>
+  </body>
+</html>

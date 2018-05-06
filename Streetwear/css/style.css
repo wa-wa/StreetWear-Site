@@ -1,0 +1,272 @@
+/*  Global stoof */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family:  sans-serif;
+  font-size: 15px;
+}
+
+/*  Image sizing */
+
+img {
+    width: 100%;
+}
+
+/*  Layout */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: 1fr 5fr 3fr ;
+  grid-template-areas:
+  "nav img-wrap img-wrap"
+  "selector img-wrap img-wrap"
+  "bottomtitle img-wrap img-wrap"
+  "sizes img-wrap img-wrap"
+  "cost img-wrap img-wrap"
+  "addBag img-wrap img-wrap"
+}
+
+/* Navigation */
+
+.nav {
+  color: #241c34;
+  z-index: 100;
+  color: black;
+  grid-area: nav;
+  display: grid;
+  margin: 5px 20px 0 10px;
+  padding: 10px;
+  grid-column: 1 / -1;
+}
+
+.nav a:hover {
+  color: #605380;
+}
+
+.fa-search {
+  margin-right: 40px;
+}
+
+/* Next | Previous navigation  */
+
+.next {
+  margin-left: 60px;
+}
+
+.selector {
+  padding-left: 50px;
+  margin-top: 70px;
+  grid-area: selector;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.selector a {
+  color: black;
+  text-decoration: none;
+}
+
+.selector a:hover {
+  color: #605380;
+  text-decoration: none;
+}
+
+/* Image  */
+
+.img-wrap {
+  grid-area: img-wrap;
+  position: sticky;
+}
+
+/* Item title and description */
+
+.bottomtitle {
+  grid-area: bottomtitle;
+  align-content: center;
+  /* text-align: justify; */
+  margin: 0 100px 0 50px;
+}
+
+.bottomtitle h5 {
+  color: #241c34;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.bottomtitle p {
+  color: #605380;
+}
+/*  Item sizes */
+.sizes {
+  background: #ebeafd;
+  grid-area: sizes;
+  padding: 20px 20px 20px 50px;
+}
+.sizes button {
+  padding: 10px;
+  background: white;
+  border: 1px solid black;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.sizes button:hover {
+  background: #241c34;
+  color: white;
+}
+
+/*  Item cost*/
+.cost {
+  background: #ebeafd;
+  grid-area: cost;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px 20px 40px 50px;
+}
+
+/* Bag item button */
+
+.addBag {
+  grid-area: addBag;
+  color: white;
+  background: #241c34;
+  align-items: center;
+  text-align: center;
+}
+
+.buttonbag {
+  font-size: 20px;
+  color: white;
+  background: #241c34;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  outline: none;
+  width: 100%;
+  padding: 50px;
+}
+
+.buttonbag:hover {
+  color: #605380;
+}
+
+/* Media Queries */
+
+@media (max-width:1000px){
+  img {
+    width: 100%;
+    height: auto;
+    align-content: center;
+  }
+  .container {
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "nav nav nav"
+    "selector selector selector"
+    "img-wrap img-wrap img-wrap"
+    "bottomtitle bottomtitle bottomtitle"
+    "cost sizes addBag"
+  }
+
+  .nav {
+    text-align: center;
+  }
+
+  .selector {
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  .bottomtitle {
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .bottomtitle h5 {
+    text-align: center;
+  }
+  /* Bag item button */
+
+  .addBag {
+    grid-area: addBag;
+    margin: 0;
+    padding: 0;
+  }
+
+  .addBag button {
+    padding: 20px;
+    border: none;
+    margin-top: 70px;
+    font-size: 20px;
+    color: white;
+    background: #241c34;
+  }
+
+  .sizes {
+    padding: 50px;
+    text-align: center;
+  }
+
+  .sizes button {
+    padding: 20px;
+  }
+
+  .cost {
+    padding: 70px 0px 0px 60px ;
+    font-size: 60px;
+  }
+}
+
+@media (max-width:700px){
+  img {
+    width: 100%;
+  }
+  .container {
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "nav nav nav"
+    "selector selector selector"
+    "img-wrap img-wrap img-wrap"
+    "bottomtitle bottomtitle bottomtitle"
+    "cost sizes sizes"
+    "addBag addBag addBag"
+  }
+  .selector {
+    padding-top: 10px;
+    border-top: 1px solid #241c34;
+    border-bottom: 1px solid #241c34;
+
+  }
+  .sizes {
+    text-align: center;
+    margin: 0;
+    padding: 35px;
+  }
+  .addBag button {
+    padding: 20px;
+    border: none;
+    margin-top: 0px;
+    font-size: 20px;
+    color: white;
+    background: #241c34;
+  }
+  .cost {
+    text-align: center;
+    padding: 50px ;
+    margin: 0;
+    font-size: 30px;
+  }
+  .bottomtitle {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+  }
+}
